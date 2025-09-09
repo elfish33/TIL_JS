@@ -1,0 +1,37 @@
+main {
+  width: 1500px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+main h1 {
+  color: #00f;
+}
+main p {
+  color: #f00;
+}
+main p:hover {
+  color: #00f;
+}
+main .box {
+  background-color: lightblue;
+}
+main .box input:hover {
+  background-color: lightpink;
+}
+main .box input[type=text] {
+  border: 1px solid lightcoral;
+}
+main .box span {
+  background-color: lightgray;
+  color: brown;
+}
+main .box span:first-of-type {
+  color: blueviolet;
+}
+
+/*# sourceMappingURL=style1.css.map */
