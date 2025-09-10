@@ -220,3 +220,42 @@ number /= 2;
 console.log(number); //10
 number %= 2;
 console.log(number); //0
+console.log('========================');
+//함수
+//1.내장함수
+//prompt('함수란??')
+//alert('Куку')
+//print();
+
+//2.사용자 정의 함수
+//function  () {}
+//html, css, js 반복 출력
+//함수 밖
+let lang1 = ''
+let lang2 = ''
+let lang3 = ''
+function study_lang(){
+    lang1 = 'html'
+    lang2 = 'css'
+    lang3 = 'javascript'
+    console.log(`배운 언어: ${lang1+lang2+lang3}`)
+}
+//호출을 해야 실행되는, 만들기만 하면 -> 반복 대기상태
+study_lang (); //함수 호출
+//console.log(lang1, lang2, lang3)
+lang2 = lang2 +'3';
+console.log(lang2);
+
+console.log('지역변수와 전역변수');
+let xx = 1;
+let yy = 0;
+function func1 () {
+    yy = 5;
+    console.log(xx+yy)
+}
+function func2 () {
+    let zz = 10;
+    console.log(xx+yy+zz)
+}
+func1()
+func2()
