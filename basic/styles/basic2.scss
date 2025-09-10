@@ -1,0 +1,53 @@
+//basic2.scss
+$main-color: aqua;
+$sub-color:yellow;
+@mixin flex-align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin menu_font {
+    font-weight: 500;
+    font-size: 0.938rem;
+}
+@mixin after_design {
+    content: '';
+    display: block;
+    position: absolute;
+}
+
+header {
+    @include flex-align-center;
+    flex: row nowrap;
+    background-color: $main-color;
+    h1 {color:$sub-color;}
+    nav {
+        .gnb  {
+            @include flex-align-center;
+            flex-flow: column nowrap;
+            > li {
+                @include menu_font;
+                > a {
+                    &:hover {color: $sub-color;} //a:hover와 같아
+                    &::after {
+                        @include after_design;
+                        width: 10px; height: 10px;
+                        left: 0; top: 0;
+                    }
+                }
+                .lnb > {
+                        li > {
+                            a {
+                                &:hover {color: $sub-color;}
+                                &::after {
+                                    @include after_design;
+                                    width: 20px; height: 5px;
+                                    right: 0; top: 0;
+                                }
+                            }
+                    }
+                }
+            }
+        }
+    }
+}
