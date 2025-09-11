@@ -1,0 +1,30 @@
+body {
+  background-color: pink;
+}
+body #slide_container {
+  background-color: gray;
+  width: 800px;
+  overflow: hidden;
+}
+body #slide_container .slide_wrap {
+  transform: translateX(-800px);
+  width: 1600px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+body #slide_container .slide_wrap .slide {
+  width: 800px;
+  height: 350px;
+}
+body #slide_container .slide_wrap .slide1 {
+  background-color: lightcoral;
+  border: 1px solid red;
+}
+body #slide_container .slide_wrap .slide2 {
+  background-color: lightblue;
+  border: 1px solid blue;
+}
+
+/*# sourceMappingURL=basic3.css.map */

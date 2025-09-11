@@ -1,0 +1,39 @@
+@mixin slide_w_h_pc {
+    width: 800px; height: 350px;
+}
+
+@mixin flex_row {
+    display: flex; flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+$border-color-red: red;
+$border-color-blue: blue;
+
+
+
+body {
+    background-color: pink;
+    #slide_container {
+        background-color: gray;
+        width: 800px; overflow: hidden;
+        .slide_wrap {
+            transform: translateX(-800px);
+            width: calc(800px * 2); // ширина баннеров
+            @include flex_row; // нужно задавать самому главному родителю
+            .slide {
+                @include slide_w_h_pc;
+                
+            }
+            .slide1 {
+                background-color: lightcoral;
+                border: 1px solid $border-color-red;
+            }
+            .slide2 {
+                background-color: lightblue;
+                border: 1px solid $border-color-blue;
+            }
+        }
+    }
+}
