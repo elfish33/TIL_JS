@@ -1,0 +1,60 @@
+@use './common.scss' as *;
+main {
+    #slide_wrap {
+        @include pc_w_h;
+        width: 800px; overflow: hidden;
+        background-color: $color_yellow;
+        position: relative;
+        
+        .slide_container {
+            height: 100%; /* !!! */
+            .slide{
+                height: 100%; /* !!!! */
+            }
+            .slide1 {
+                @include bg_cover;
+                background-image: url(../bg_001.png);
+                background-size: 800px auto;
+                background-position: 120% center;
+                
+                > .title_contents {
+                    > h1 {
+                        font-size: 3.188rem; font-weight: 700;
+                    }
+                    > p font-size:  font-weight: ;
+                }
+                .bnr_link {
+                    @include flex_row; gap: 8px;
+                    .education_link {
+                        @include slide_btn;
+                        background-color: $btn_dark;
+                        color: #fff;
+
+                    }
+                    .news_btn {
+                        @include slide_btn;
+                        background-color: $color_yellow;
+                        img {}
+                    }
+                }
+            }
+            .slide2 {}
+            .slide3 {}
+            .slide_page_wrap {
+                .pagenetion {
+                    .current {}
+                    .bar {}
+                    .total {}
+                }
+                .btn_g {
+                    #prev {
+                        img {}
+                    }
+                    #next {
+                        img {}
+                    }
+                }
+            }
+        }
+    }
+}

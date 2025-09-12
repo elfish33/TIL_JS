@@ -1,0 +1,38 @@
+$color_yellow: #ffffd4;
+$btn_dark: #000;
+$btn_light: #fff;
+
+@mixin pc_w_h {
+    max-width: 1360px;
+    min-width: 320px;
+    height: 750px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+@mixin flex_row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@mixin bg_cover {
+    background-repeat: no-repeat;
+    block-size: cover;
+    background-position: center;
+}
+
+@mixin slide_btn {
+    display: inline-block;
+    width: 250px; line-height: 60px;
+    text-align: center;
+    border-radius: 40px;
+    font-weight: 600; font-size: 1.1rem;
+}
+
+@mixin pst-ab {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: max-content;
+}
