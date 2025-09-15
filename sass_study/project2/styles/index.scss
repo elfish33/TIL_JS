@@ -21,7 +21,7 @@ main {
                     > h1 {
                         font-size: 3.188rem; font-weight: 700;
                     }
-                    > p font-size:  font-weight: ;
+                    > p {font-size:  font-weight: ;
                 }
                 .bnr_link {
                     @include flex_row; gap: 8px;
