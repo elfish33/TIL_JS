@@ -1,0 +1,57 @@
+body {
+    max-width: 1920px;
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    background-image: url(../images/bg_002.png);
+    background-position-y: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#whole_wrap {
+    
+    margin: 80px auto 0 auto;
+    display: flex; flex-flow: column nowrap;
+    justify-content: flex-start; align-items: center;
+    gap: 30px;
+}
+#whole_wrap h1 {
+    font-weight: 600;
+    font-size: 3.438rem;
+    text-transform: uppercase;
+    color: #448836;
+    text-align: center;
+}
+#whole_wrap p {
+    color: #448836;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 120%;
+}
+#whole_wrap #ideal_weight_frm {
+    width: 50%; height: max-content;
+    text-align: center;}
+#whole_wrap #ideal_weight_frm #weight_frm {}
+#whole_wrap #ideal_weight_frm #weight_frm .input_list {}
+#whole_wrap #ideal_weight_frm #weight_frm .input_list > li {
+}
+#whole_wrap #ideal_weight_frm #weight_frm .input_list > li input {
+    border: 1.5px solid #448836;
+    border-radius: 10px;
+    width: 320px; line-height: 35px;
+    padding-left: 10px; 
+}
+#whole_wrap #ideal_weight_frm #weight_frm .input_list > li input::placeholder {
+    color: #448836; font-weight: 300;
+}
+#whole_wrap #ideal_weight_frm #weight_frm .input_list > li input:first-child {
+    margin: 15px 0;}
+#whole_wrap #ideal_weight_frm #weight_frm #calculate_btn {
+    width: 260px; line-height: 20px;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #448836;
+    color: #fff;
+    margin-top: 30px;
+}

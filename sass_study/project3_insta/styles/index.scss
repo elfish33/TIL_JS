@@ -1,0 +1,77 @@
+@use './common.scss' as *;
+
+body {
+    background-color: #f5f5f5;
+    width: 100vh; height: 90vh;
+    margin: 0 auto;
+    #whole_wrap {
+        position: relative;
+        width: 420px; height: 640px;
+        margin: 80px auto;
+        @include flex-col;
+        #top {
+            padding: 10px 0;
+            width: 100%; line-height: 35px; 
+            @include flex-row;
+            justify-content: space-between;
+            font-size: $font-size-m; font-weight: $font-weight-l;
+            background-color: #fff;
+            .top_menu {
+                @include flex-row; gap: 10px;
+                padding-left: 10px;
+                > img {width: 40px; height: 40px;}
+                > span {}
+            }
+            #view_more {
+                padding-right: 10px;
+            }
+        }
+        #image {width: 100%;
+            > #photo {
+                background-image: url(https://i.pinimg.com/736x/f7/d0/e0/f7d0e07552168575b9fe37c8d8c63624.jpg);
+                @include bg;
+                width: 100%; height: 550px;
+            } //배경 사진
+        }
+        #posting {
+            width: 100%; 
+            background-color: #fff;
+            padding: 10px 10px;
+            #posting_menu {
+                width: 100%;
+                @include flex-row; justify-content: space-between;
+                #icons {
+                    @include flex-row;                  
+                    gap: 10px;
+                    #like {
+                        > img {width: 24px; height: 24px;}
+                    }
+                    #comment {
+                        > img {width: 24px; height: 24px;}
+                    }
+                    #message {
+                        > img {width: 24px; height: 24px;}
+                    }
+                }
+                .scrape {
+                    font-weight: $font-weight-m;
+                }
+            }
+            #posting_info {
+                padding-top: 10px;
+                @include flex-col; align-items: flex-start;
+                gap: 5px;
+                > .like_data {font-weight: $font-weight-m;}
+                > .username_data {font-weight: $font-weight-m;}
+                > .comment_data {
+                    font-size: $font-size-s;
+                    color: #ddd;
+                    font-weight: $font-weight-m;
+                }
+                > .day_data {
+                    font-size: $font-size-s;
+                    font-weight: $font-weight-m;}
+            }
+        }
+    }
+}

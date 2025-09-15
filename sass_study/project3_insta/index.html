@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3 - Instagram</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/index.js" defer></script>
+    <style>
+        #popup {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+        #popup svg {
+            fill: #fff;
+            stroke: #f5f5f5;
+            stroke-width: 10px;
+            transform: scale(0.3);
+            overflow: visible;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="whole_wrap">
+        <!-- popup -->
+        <div id="popup">
+            <svg width="192" height="186" viewBox="0 0 192 186" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M117.167 185.34V163.644C133.042 159.058 145.83 150.238 155.531 137.185C165.233 124.133 170.083 109.316 170.083 92.7354C170.083 76.1549 165.233 61.3382 155.531 48.2854C145.83 35.2326 133.042 26.4132 117.167 21.8271V0.131256C139.039 5.07014 156.854 16.1385 170.613 33.3365C184.371 50.5344 191.25 70.334 191.25 92.7354C191.25 115.137 184.371 134.936 170.613 152.134C156.854 169.332 139.039 180.401 117.167 185.34ZM0.75 124.75V61.25H43.0833L96 8.33334V177.667L43.0833 124.75H0.75ZM117.167 135.333V50.1375C125.457 54.0181 131.939 59.8389 136.614 67.6C141.288 75.3611 143.625 83.8278 143.625 93C143.625 101.996 141.288 110.33 136.614 118.003C131.939 125.676 125.457 131.453 117.167 135.333Z"/>
+            </svg>
+            </div>
+        <!-- fixed -->
+        <section id="top">
+            <a href="#" class="top_menu">
+                <img src="./images/profile_photo_001.png" alt="user profile photo">
+                <span>Username</span>
+            </a>
+            <a href="#" id="view_more">View more</a>
+        </section>
+        <section id="image">
+            <div id="photo"></div> <!-- for an image -->
+        </section>
+        <section id="posting">
+            <div id="posting_menu">
+                <div id="icons">
+                <button type="button" id="like"><img src="./images/like_off.png" alt="like button"></button> <!-- a로 해도 되고 -->
+                <button type="button" id="comment"><img src="./images/comment_off.png" alt="comment button"></button>
+                <button type="button" id="message"><img src="./images/paper_off.png" alt="message button"></button>
+                </div>
+                <a href="#" class="scrape">Save</a>
+            </div>
+            <div id="posting_info">
+                <p class="like_data">100 likes</p>
+                <p class="username_data">Username</p>
+                <a href="#" class="comment_data">View all 20 comments</a>
+                <p class="day_data">3 days ago</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
