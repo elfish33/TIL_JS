@@ -6,12 +6,13 @@ form,fieldset,legend,input,button,select,option,textarea,
 em,strong,sub,sup,br,span,del,s,q,mark,code,img,a,
 table,thead,tbody,tfoot,tr,td,th {
     margin:0; padding:0; box-sizing:border-box;
-    line-height:1; letter-spacing:0; word-spacing:0;
+    line-height:1; letter-spacing:-0.02em; word-spacing:0;
     font-size:1em; font-weight:400; font-style:normal;
-    font-family: 'Pretendard', '맑은 고딕', sans-serif;
+    color:#000;
+    font-family:'Pretendard',sans-serif;
 }
 /* 개별 태그 초기값 */
-a {text-decoration:none; color:#000;}
+a {text-decoration:none;}
 ul,ol,li {list-style:none;}
 fieldset {border:0;}
 legend {display:none;}

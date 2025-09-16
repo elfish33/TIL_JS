@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Practice</title>
+    <link rel="stylesheet" href="./styles/weight_calculator_reset.css">
+    <link rel="stylesheet" href="./styles/weight_calculator_index_bl.css">
+    <script src="./script/weight_calculator_index_en.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="./weight_calculator_index_kr.html" id="lang_set">
+            <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 17C16.771 17 18.657 17 19.828 15.828C20.999 14.656 21 12.771 21 9C21 5.229 21 3.343 19.828 2.172C18.656 1.001 16.771 1 13 1H9C5.229 1 3.343 1 2.172 2.172C1.001 3.344 1 5.229 1 9C1 12.771 1 14.657 2.172 15.828C2.825 16.482 3.7 16.771 5 16.898" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13 17C11.764 17 10.402 17.5 9.159 18.145C7.161 19.182 6.162 19.701 5.67 19.37C5.178 19.039 5.271 18.015 5.458 15.966L5.5 15.5" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round"/>
+                <path d="M4.5 11.5L5.5 9.5M5.5 9.5L6.606 7.289C6.68914 7.12312 6.81679 6.98364 6.97467 6.88617C7.13256 6.78869 7.31445 6.73707 7.5 6.73707C7.68555 6.73707 7.86744 6.78869 8.02532 6.88617C8.18321 6.98364 8.31086 7.12312 8.394 7.289L9.5 9.5M5.5 9.5H9.5M9.5 9.5L10.5 11.5M11.5 5.5H13.482V7C13.482 7.5 12.986 8.5 11.995 8.5M15.959 5.5V7.5M15.959 7.5V11.5M15.959 7.5H17.5" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </header>
+<div id="whole_wrap">
+    <h1>Your ideal<br>weight calculator</h1>
+    <p>Welcome to your Ideal Weight Calculator!<br>
+    Enter your height and weight below<br>to see your recommended weight range
+        <br>and how much you may need to adjust.</p>
+    <div id="ideal_weight_frm">
+        <form action="#" method="get" id="weight_frm">
+            <ul class="input_list">
+                <li><input type="text" name="height" id="height" class="input_height" placeholder="Height (cm)"></li>
+                <li><input type="text" name="weight" id="weight" class="input_weight" placeholder="Weight (kg)"></li>
+            </ul>
+            <p id="weight_result">Ideal weight results</p>
+            <button type="button" id="calculate_btn">See my ideal weight</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

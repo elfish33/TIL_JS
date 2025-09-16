@@ -1,12 +1,21 @@
 body {
     max-width: 1920px;
     width: 100%;
-    height: 600px;
+    max-height: 1000vh;
     margin: 0 auto;
     background-image: url(../images/bg_002.png);
-    background-position-y: 50%;
+    background-position-y: 70%;
+    background-position-x: -60px;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+header {
+    width: 100%; height: 40px;
+}
+header #lang_set {float: right; padding: 10px 10px 0 0;}
+header #lang_set > svg {
+    width: 35px; height: 35px;
 }
 #whole_wrap {
     
@@ -29,6 +38,7 @@ body {
     font-size: 1.125rem;
     line-height: 120%;
 }
+#whole_wrap .kr {font-size: 1.25rem;}
 #whole_wrap #ideal_weight_frm {
     width: 50%; height: max-content;
     text-align: center;}
@@ -47,6 +57,11 @@ body {
 }
 #whole_wrap #ideal_weight_frm #weight_frm .input_list > li input:first-child {
     margin: 15px 0;}
+#whole_wrap #ideal_weight_frm #weight_frm #weight_result {
+    opacity: 0; font-weight: 600;
+    color: #EF4D49;
+    white-space: pre-line;
+}
 #whole_wrap #ideal_weight_frm #weight_frm #calculate_btn {
     width: 260px; line-height: 20px;
     border-radius: 8px;
