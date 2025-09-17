@@ -1,0 +1,321 @@
+@use './common.scss' as *;
+
+
+body {
+    height: 150vh;
+    
+    #wrap {
+        header {
+            width: 100%;
+            height: 52px; padding: 0 80px;
+            @include flex-row; gap: 15px;
+            border: 1px solid $color-gray-l2;
+            border-left: 0; border-right: 0;
+            
+            > a {
+                font-size: $font-size-xxm;
+                font-weight: $font-weight-b;
+                
+            }
+        }
+        main {
+            @include content-w;
+            .path {
+                padding: 20px;
+                > a {
+                    color: $color-gray-d;
+                    font-size: $font-size-m2;
+                    position: relative;
+                    padding-right: 12px;;
+                    &::after{
+                        @include after_before;
+                        content: '>'; right: 0; 
+                        left: auto; 
+                        top: 3px;
+                        font-size: $font-size-xs;
+                        color: $color-gray-m;
+                    }
+                    &:last-child::after {display: none;}
+                }
+            }
+            .container {
+                width: 100%;
+                @include flex-row; gap: 10px; align-items: flex-start;
+                .overview_img {
+                    max-height: 798px;
+                    padding: 0 10px;
+                    @include flex-row; gap: 10px;
+                    align-items: flex-start;
+                    .thumnail {
+                        @include flex-col; 
+                        align-items: flex-start;
+                        gap: 8px;
+                        > a {
+                            img {
+                                width: 100%;
+                                @include thumnail;
+                                border-radius: 4px;
+                            }
+                        }
+                    }
+                    .overview {
+                        > img {
+                            width: 100%;
+                            border-radius: 4px;
+                        }
+                    }
+                }
+                .contents {
+                    width: 100%;
+                    max-width: 461px; height: 798px;
+                    @include flex-col;
+                    justify-content: space-between; 
+                    align-items: flex-start;
+                    gap: 15px;
+                    .brand {
+                        > a {
+                            font-size: $font-size-m;
+                            color: $color-gray-d;
+                        }
+                    }
+                    .product_info {
+                        @include flex-row; gap: 18px;
+                        > h1 {
+                            font-size: $font-size-l1;
+                            font-weight: $font-weight-b
+                        }
+                        .right_icon {
+                            @include flex-row; gap: 8px; line-height: 34px;
+                            .scrap {
+                                @include flex-col; gap: 2px;
+                                .bookmark {
+                                    fill: $color-gray-l3;
+                                    @include icon20;
+                                }
+                                > span {
+                                    font-size: $font-size-xs;
+                                }
+                            }
+                            .share {
+                                .share_icon {
+                                    @include icon20;
+                                    transform: translateY(-35%);
+                                    fill: $color-gray-l3;}
+                            }
+                        }
+                    }
+                    .review {
+                        @include flex-row; gap: 10px;
+                        .score {
+                            .star {fill: $color-blue;}
+                            .star1 {}
+                            .star2 {}
+                            .star3 {}
+                            .star4 {}
+                            .star5 {}
+                        }
+                        .number {
+                            color: $color-blue;
+                            font-weight: $font-weight-b;
+                            font-size: $font-size-s;
+                        }
+                    }
+                    .price_wrap {
+                        .sale_original_price{
+                            .sale {
+                                color: $color-gray-l2;
+                            }
+                            .original {
+                                color: $color-gray-l1;
+                            }
+                            .price_info {
+                                position: relative;
+                                .info_icon {
+                                    width: 13px; height: 13px;
+                                    fill: $color-gray-l1;
+                                }
+                                .info {
+                                    font-size: $font-size-m;
+                                    color: $color-gray-m;
+                                    background-color: $color-white;
+                                    line-height: 1.4;
+                                    border-radius: 4px;
+                                    box-shadow: 0 5px 7px rgba(0,0,0,0.15);
+                                    width: 300px;
+                                    position: absolute;
+                                    left: 50%; top: 25px;
+                                    /* transform: translateX(-50%); */
+                                    padding: 10px;
+                                    display: none; /* default!! */
+                                }
+                            }
+                        }
+                        .total_price {
+                            margin-top: 15px;
+                            .price {
+                                font-size: $font-size-xl;
+                                font-weight: $font-weight-b;
+                                > span {
+                                    font-size: $font-size-l2;
+                                }
+                            }
+                            > img {
+                                width: 60px; height: 15px;
+                            }
+                        }
+                    }
+                    .benefit_ship {
+                        padding: 18px 0;
+                        display: grid;
+                        grid-template-columns: 55px 2fr;
+                        align-items: start;
+                        gap: 8px 5px;
+                        dt {}
+                        dd {
+                            > em {}
+                            &:nth-of-type(3) {}
+                            > em {
+                                font-weight: $font-weight-b;
+                            }
+                        }
+                        .ship_info {
+                            font-size: $font-size-s;
+                            width: 261px; line-height: 46px;
+                            padding: 0 10px;
+                            background-color: #f7f9fa;
+                            border-radius: 4px;
+                            > em {}
+                        }
+                    }
+                    .benefit_ship dt:nth-of-type(1),
+                    .benefit_ship dt:nth-of-type(2) {
+                    grid-column: 1;
+                    }
+                    .benefit_ship dd:nth-of-type(1),
+                    .benefit_ship dd:nth-of-type(2),
+                    .benefit_ship dd:nth-of-type(3),
+                    .benefit_ship dd:nth-of-type(4),
+                    .benefit_ship dd:nth-of-type(5),
+                    .benefit_ship dd:nth-of-type(6) {
+                        grid-column: 2;
+                    }
+                    #orderFrm {
+                        width: 100%;
+                        .product_opt{
+                            select{
+                                
+                                appearance: none;
+                                background-size: 14px 14px;
+                                background-repeat: no-repeat;
+                                background-position: 95% center;
+                                background-image: url(https://cdn-icons-png.flaticon.com/128/6423/6423873.png);
+                            }
+                            @include flex-col; align-items: flex-start;
+                            gap: 10px;
+                            #color_select{
+                                
+                                padding: 10px;
+                                border: 1px solid $color-blue;
+                                border-radius: 4px;
+                                width: 100%;
+                                font-size: $font-size-m2;
+                                color: $color-gray-l2;
+                                > option {}
+                            
+                            }
+                            #size_select {
+                                padding: 10px;
+                                border: 1px solid $color-blue;
+                                width: 100%;
+                                border-radius: 4px;
+                                font-size: $font-size-m2;
+                                color: $color-gray-l2;
+                                > option {}
+                            }
+                        }
+                        .order_list {
+                            margin: 15px 0;
+                            padding: 10px;
+                            width: 100%; height: 100px;
+                            background-color: #f7f9fa;
+                            @include flex-col;                            
+                            justify-content: space-between;
+                            align-items: flex-start;
+                            .info {
+                                width: 100%;
+                                @include flex-row;
+                                justify-content: space-between;
+                                font-size: $font-size-m;
+                                color: $color-gray-m;
+                                .color {}
+                                .size {}
+                                .close {margin-left: auto;}
+                                #close_btn {
+                                    @include icon18;
+                                    
+                                }
+                            }
+                            .num_price {
+                                width: 100%; height: max-content;
+                                @include flex-row;
+                                justify-content: space-between;
+                                line-height: 46px;
+                                .num {
+                                    width: 84px;
+                                    margin-bottom: 10px;
+                                    @include flex-row;
+                                    background-color: $color-white;
+                                    border: 1px solid $color-gray-l3;
+                                    border-radius: 4px;
+                                    /* transform: translateY(10px); */
+                                    #minus_btn {
+                                        @include icon18;
+                                    }
+                                    #order_num {
+                                        width: 50%;
+                                        text-align: center;
+                                    }
+                                    #plus_btn {
+                                        @include icon18;
+                                    }
+                                }
+                                > .price {
+                                    font-size: 1rem;
+                                    font-weight: $font-weight-b;
+                                    /* float: right; */
+                                }
+                            }
+                            
+                        }
+                        .order_price{
+                            @include flex-row; justify-content: space-between;
+                            > h2 {
+                                font-size: $font-size-m;
+                                font-weight: $font-weight-b;
+                            }
+                            > .price {
+                                font-size: 1.25rem;
+                                font-weight: $font-weight-b;
+                                > em {}
+                            }
+                        }
+                        .order_btn {
+                            margin-top: 20px;
+                            @include flex-row; justify-content: space-around;
+                            #cart_btn {
+                                @include cart_buy_btn;
+                                border: 1px solid $color-blue;
+                            }
+                            #buy_btn {
+                                @include cart_buy_btn;
+                                background-color: $color-blue;
+                                color: $color-white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        footer {}
+    }
+}
