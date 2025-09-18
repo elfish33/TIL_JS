@@ -350,6 +350,7 @@ body #wrap main .container .contents #orderFrm .order_list .num_price > .price {
   /* float: right; */
 }
 body #wrap main .container .contents #orderFrm .order_price {
+  margin: 30px 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
