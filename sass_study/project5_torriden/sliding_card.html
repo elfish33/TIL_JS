@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sliding_card</title>
+    <style>
+        .all {
+            width:600px; overflow:hidden;
+            background:#eee; padding:10px;
+        }
+        .all .bnr {
+            display:flex; flex-flow:row nowrap; gap:10px;
+            width:calc(500px * 2);
+            transition: transform 0.3s ease-out;
+        }
+        .all .bnr .card {
+            width:500px; height:200px; border-radius:10px;
+        }
+        .all .bnr .card1 {background:aqua;}
+        .all .bnr .card2 {background:lime;}
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="bnr">
+            <div class="card1 card">1</div>
+            <div class="card2 card">2</div>
+        </div>
+    </div>
+
+    <script>
+        const allContainer = document.querySelector('.all')
+        const bnrContainer = allContainer.querySelector('.bnr')
+        const card = bnrContainer.querySelectorAll('.card')
+        const cardW = card[0].offsetWidth;
+        let isDrag = false; //изначально мы не трогаем мышку, задаем изначальное значение фолс
+        console.log(cardW)
+        // 마우스 위치 계산 변수
+        let startX = 0
+        // 수평 스크롤 크기 계산 변수
+        let startScrollLeft = 0
+
+
+
+
+        allContainer.addEventListener('mousedown',(e)=>{
+            isDrag = true;//начало дрэга когда нажимаем мышку = статус меняется
+            startX = e.pageX - allContainer.offsetLeft // просим рассчитать расстояние слева от контейнера до местоположения мыши
+            startScrollLeft = allContainer.scrollLeft;// просим рассчитать расстояние местоположение скролла
+            console.log(startX, startScrollLeft)
+        })
+        allContainer.addEventListener('mouseup',()=>{
+            isDrag = false;//конец дрэга когда убираем мышку = статус меняется
+        })
+        allContainer.addEventListener('mousemove',(e)=>{
+            if(!isDrag){
+                return // 강제 종료 = если статус дрэга фолс заверши функцию
+            }//если отпустили мышку 
+            console.log('checking')
+            const x = e.pageX; //создаем переменную координат мыши при ее движении
+            const walk = x -startX; //узнаем насколько продвинулся курсор после начала движения от начальной точки
+            allContainer.scrollLeft = startScrollLeft - walk;
+        })
+
+    </script>
+</body>
+</html>

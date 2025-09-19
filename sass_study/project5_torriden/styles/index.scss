@@ -1,0 +1,206 @@
+@use './common.scss' as *;
+
+body {
+    width: 1920px;
+    #wrap {
+        width: 1680px; height: 1615px;
+        margin: 0 auto;
+        @include flex-row;
+        align-items: flex-start;
+        #product_visual_wrap {
+            background-color: lightpink;
+            width: 860px;
+            overflow: hidden;
+            .big_box {
+                width: calc(860px*2);
+                display: flex;
+                #prev_img_btn {
+                    > svg {fill: #000;}
+                }
+                .photo {
+                    
+                }
+                .big1 {}
+                .big1 > img {width: 860px; height: 860px;}
+                .big2 {}
+                .big2 > img {width: 860px; height: 860px;}
+                #next_img_btn {
+                    > svg {fill: #000;}
+                }
+            }
+            .small_box {
+                background-color: lightgreen;
+                width: 860px; overflow: hidden;
+                .small_img {
+                    width: 100px; height: 100px;
+                    @include border-rad15;
+                    background-color: lightseagreen;
+                }
+                .small_img > .photo {
+                    width: 100%; height: 100%;
+                    @include border-rad15; //кому лучше задавать радиус?
+                }
+                .small_img1_btn {
+                    .small1 {}
+                }
+                .small_img2_btn {
+                    .small2 {}
+                }
+                .small_img3_btn {
+                    .small3 {}
+                }
+                .small_img4_btn {
+                    .small4 {}
+                }
+                .small_img5_btn {
+                    .small5 {}
+                }
+                .small_img6_btn {
+                    .small6 {}
+                }
+                .small_img7_btn {
+                    .small7 {}
+                }
+            } 
+        }
+        #product_info_wrap {
+            background-color: lightblue;
+            #marketing_labels {
+                width: max-content; line-height: 12px;
+                @include flex-row; gap: 5px;
+                font-size: $fs_small_12;
+                margin-left: 5px;
+                .best_label {
+                    background-color: $color_poin_light_green;
+                    padding: 2px;
+                }
+                .hydrating_label {
+                    background-color: $color_poin_light_blue;
+                    color: $color_white;
+                    padding: 2px;
+                }
+            } 
+            #product_title_review {
+                .product_title {
+                    font-size: $fs_title_30;
+                    font-weight: $fw_semi_bold;
+                    @include letter_line;
+                }
+                .product_sub_title {
+                    color: $color_font_dark_gray;
+                    @include letter_line;
+                }
+                #review_wrap {
+                    @include flex-row; gap: 12px;
+                    .review_stars {
+                        @include flex-row; gap: 4px;
+                        > svg {
+                            fill: #000;
+                        }
+                    } .review_text {
+                        .review_link {
+                            > span {
+                                &:nth-child(2)::before {
+                                    content: '';
+                                    border: 1px solid $color_font_dark_gray;
+                                    margin-right: 4px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #price_weight_info {
+                .product_price {
+                    font-size: $fs_subtitle_23;
+                    font-weight: $fw_semi_bold;
+                }
+                > span:nth-child(2) {
+                    font-size: $fs_regular_14;
+                    color: $color_font_dark_gray;
+                }
+            }
+            #option_types_info {
+                .type_text{
+                    .option {}
+                    .tubetype {}
+                    .subtitle {}
+                }
+                .type_buttons {
+                    #jar_type {}
+                    #tube_type {}
+                    .active_type {}
+                }
+            }
+            #quantity_select {
+                .quantity {}
+                .subtitle {}
+                #minus_btn{
+                    > svg {}
+                }
+                #input_quantity {}
+                #plus_btn{
+                    > svg {}
+                }
+            }
+            #purchase_option_frm_btn {
+                #purchase_frm {
+                    #subscription_list {
+                        .active_radio {}
+                        .one_li {
+                            > label {
+                                #one_time_purchase {}
+                                > span:nth-child(1) {}
+                                .price_info {}
+                                }
+                        }
+                        .two_li {
+                            > span:nth-child(1) {}
+                            .price_info {}
+                        }
+                        .three_li {
+                            > label {
+                                #every_month_purchase {}
+                                > span {}
+                            }
+                        }
+                        .four_li {
+                            label {
+                                #every_two_purchase {}
+                                > span {}
+                            }
+                        }
+                        .five_li {
+                            label {
+                                #every_three_purchase {}
+                                > span {}
+                            }
+                        }
+                        
+                    }
+                    > p {
+                        > a {}
+                    }
+                    #add_cart_btn {}
+                    .wish_wrap {
+                        > svg {}
+                        #add_wish_btn {}
+                    }
+                }
+                #summary_benefit_info {
+                    .summary {
+                        > p {}
+                        .info_arrow_down_btn {
+                            > svg {}
+                        }
+                    }
+                    .benefit {
+                        .info_arrow_down_btn {
+                            > svg {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
