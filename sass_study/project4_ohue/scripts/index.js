@@ -48,7 +48,7 @@ console.log('===================================')
 //로그인 정보 저장
 //  true == 로그인
 //  false == 로그아웃
-localStorage.setItem('isLogin', 'true'); //('속성', '값')
+localStorage.setItem('isLogin', 'fa'); //('속성', '값')
 
 //2. 😁 저장하기 버튼 클릭 시 로그인 유무에 따라 다른 결과 실행
 const bookMark = document.querySelector('.right_icon .scrap')
@@ -274,21 +274,69 @@ closeBtn.addEventListener('click', function(){ // используем анон�
 
 
 //9. 주문목록의 + 클릭 시 재고수량까지 주문 수량+금액 표시
-const orderMinusBtn = document.querySelector('#minus_btn');
-const orderPlusBtn = document.querySelector('#plus_btn');
-const orderNum = document.querySelector('#order_num');
-let count = 1;
-console.log(orderMinusBtn, orderPlusBtn, orderNum);
-orderPlusBtn.addEventListener('click',plusFunc)
-orderMinusBtn.addEventListener('click',minusFunc)
-function plusFunc(){
-    orderNum.value = ++count;
-    totalPrice.textContent = orderNum * Number(totalPrice);
-    console.log(typeof(orderNum))
+//필요 : + 재고수량, 주문수량(productOptDB[0].stock), 주문금액 (totalPrice), 증가되는 숫자 데이터
+const plusBtn = document.querySelector('#plus_btn')
+const minusBtn = document.querySelector('#minus_btn')
+const orderNum = document.querySelector('#order_num') //가운데 숫자
+const orderListPrice = document.querySelector('.order_list .price')
+let num = 1; //초기 주문 수량 // 0이어도 됨
+console.log('=========================================')
+console.log(plusBtn, orderNum, minusBtn, orderListPrice)
+
+//초기값 : 주문수량칸에 값 1 적용하기
+orderNum.value = num;
+//+ 버튼 클릭 시 주문 수량이 1씩 증가하고 주문 수량에 따라 가격 증가하기
+// 금액은 데이터베이스에서 가져오기!
+plusBtn.addEventListener('click', ()=>{
+    if(num < productOptDB[0].stock){
+        num++;// если написать только это ничего не будет высвечиваться так как мы не просили
+        PlusMinusFunc()
+        /* orderNum.value = num; // а здесь уже просим сделать значение номера в соответствии с возрастанием
+        let total = num * productOptDB[0].price
+        orderListPrice.textContent = total.toLocaleString('ko-kr');
+        totalPrice.textContent = total.toLocaleString('ko-kr'); */
+    }else {
+        alert('최대 구매 수량입니다')
+    }
+})
+//10. 주문목록의 - 클릭 시 수량과 금액이 감소; 값이 1일 때 누르면 경고창 출력
+minusBtn.addEventListener('click',()=>{
+    if(num >= 1){ // если кол-во больше или равно 1 сделай следующее (можно не вызывать базу данных здесь)
+        num--;
+        PlusMinusFunc()
+    }else{
+        alert('최소 구매 수량니다!')
+    }
+})
+function PlusMinusFunc(){ // после того как записали код выше стало понятно, что для минуса и плюса один и тотже подход кроме первой строчки
+    orderNum.value = num; // поэтому лучше оформить это в функцию, чтобы было проще работать с кодом
+    let total = num * productOptDB[0].price;
+    orderListPrice.textContent = total.toLocaleString('ko-kr');
+    totalPrice.textContent = total.toLocaleString('ko-kr');
 }
 
-function minusFunc(){
-    orderNum.value = --count;
-}
-//10. 주문목록의 - 클릭 시 수량과 금액이 감소; 값이 1일 때 누르면 경고창 출력
 //11. (상품 미 선택시) 장바구니&바로구매 클릭 시 '상품을 선택하세요' 경고창 출력
+const cartBtn = document.querySelector('#cart_btn')
+const buyBtn = document.querySelector('#buy_btn')
+console.log(cartBtn, buyBtn)
+cartBtn.addEventListener('click',()=>{
+    cartBuyFunc('./cart.html') //(3-1) внутри () пишем путь, по которому хотим пройти в этом случае
+})
+console.log('=========================')
+console.log(loginStatus)
+buyBtn.addEventListener('click',()=>{
+    cartBuyFunc('./buy.html')//(3-2) внутри () пишем путь, по которому хотим пройти в этом случае
+})
+
+//12. 😁 (상품 선택 시) 장바구니&바로구매 클릭 시 로그인 유무에 따라 다른 페이지 이동
+
+function cartBuyFunc(url){//(1) внутри () записали параметр, который изменяется = куда переходить
+    if(colorSelect.selectedIndex == 0 || sizeSelect.selectedIndex == 0){
+        alert('옵션 선택 후에 버튼을 클릭하세요')
+    }else{
+        loginStatus = localStorage.getItem('isLogin')
+        if(loginStatus == 'true'){
+            location.href = url // (2) указываем, в какой части кода будем использовать этот параметр
+        } else {location.href = './login.html'}
+    }
+}
