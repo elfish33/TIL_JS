@@ -11,6 +11,7 @@ $fw_light: 400;
 $fs_title_30: 1.875rem;
 $fs_subtitle_23: 1.438rem;
 $fs_point_19: 1.188rem;
+$fs_point15: 0.92rem;
 $fs_regular_14: 0.875rem;
 $fs_small_12: 0.813rem;
 
@@ -40,4 +41,9 @@ $letspa: -0.2;
 @mixin letter_line {
     letter-spacing: $letspa;
     line-height: $lh;
+}
+@mixin type_button {
+    width: 144px; height: 46px;
+    padding: 15px;
+    border-radius: 40px;
 }
