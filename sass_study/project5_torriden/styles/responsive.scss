@@ -1,0 +1,13 @@
+@use './common.scss' as *;
+@use './index.scss';
+
+@media screen and (max-width: 1000px) {
+    body {
+        #wrap {
+            @include flex-col;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    
+}

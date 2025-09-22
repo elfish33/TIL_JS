@@ -88,7 +88,6 @@ body #wrap #product_visual_wrap .small_box .small_img > .photo {
   border-radius: 15px;
 }
 body #wrap #product_info_wrap {
-  width: 622px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
@@ -238,9 +237,6 @@ body #wrap #product_info_wrap #quantity_select .input_quantity_box #input_quanti
 body #wrap #product_info_wrap #quantity_select .input_quantity_box #plus_btn > svg {
   fill: #FFF;
 }
-body #wrap #product_info_wrap #purchase_option_frm_btn {
-  width: 100%;
-}
 body #wrap #product_info_wrap #purchase_option_frm_btn #purchase_frm #subscription_list {
   position: relative;
   width: 100%;
@@ -352,16 +348,6 @@ body #wrap #product_info_wrap #summary_benefit_info {
   width: 100%;
 }
 body #wrap #product_info_wrap #summary_benefit_info .summary {
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  justify-content: space-between;
-}
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_main {
-  width: 100%;
   position: relative;
   display: flex;
   flex-flow: row nowrap;
@@ -370,7 +356,10 @@ body #wrap #product_info_wrap #summary_benefit_info .summary .summary_main {
   justify-content: space-between;
   padding: 10px;
 }
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_main::before {
+body #wrap #product_info_wrap #summary_benefit_info .summary .info_arrow_down_btn > svg {
+  fill: #000;
+}
+body #wrap #product_info_wrap #summary_benefit_info .summary::before {
   content: "";
   height: 0.8px;
   width: 100%;
@@ -380,7 +369,7 @@ body #wrap #product_info_wrap #summary_benefit_info .summary .summary_main::befo
   background-color: #6D7175;
   display: block;
 }
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_main::after {
+body #wrap #product_info_wrap #summary_benefit_info .summary::after {
   content: "";
   background-color: #6D7175;
   height: 0.8px;
@@ -390,69 +379,7 @@ body #wrap #product_info_wrap #summary_benefit_info .summary .summary_main::afte
   left: 0;
   bottom: 0;
 }
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_main .sub_title {
-  width: 100%;
-  position: relative;
-  font-size: 1.188rem;
-  font-weight: 600;
-}
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_main .info_arrow_down_btn > svg {
-  fill: #000;
-}
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_popup {
-  display: none;
-  letter-spacing: -0.2;
-  line-height: 1.3;
-}
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_popup h4 {
-  font-weight: 600;
-  margin: 20px 0;
-}
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_popup .ingredient_wrap {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-}
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_popup .ingredient_wrap p {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-}
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_popup .ingredient_wrap p:nth-of-type(1) > img, body #wrap #product_info_wrap #summary_benefit_info .summary .summary_popup .ingredient_wrap p:nth-of-type(2) > img, body #wrap #product_info_wrap #summary_benefit_info .summary .summary_popup .ingredient_wrap p:nth-of-type(3) > img, body #wrap #product_info_wrap #summary_benefit_info .summary .summary_popup .ingredient_wrap p:nth-of-type(4) > img {
-  width: 40px;
-  height: 40px;
-}
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_popup p:nth-of-type(2) {
-  margin-top: 20px;
-}
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_popup p:nth-of-type(2) > em {
-  font-weight: 600;
-}
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_popup .benefit_wrap {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px 15px;
-}
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_popup .benefit_wrap .benefit_item {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_popup .benefit_wrap .benefit_item > img {
-  width: 48px;
-  height: 48px;
-}
-body #wrap #product_info_wrap #summary_benefit_info .summary .summary_popup .benefit_wrap .benefit_item span {
-  display: block;
-  text-align: center;
-}
-body #wrap #product_info_wrap .benefit {
+body #wrap #product_info_wrap #summary_benefit_info .benefit {
   position: relative;
   display: flex;
   flex-flow: row nowrap;
@@ -461,14 +388,10 @@ body #wrap #product_info_wrap .benefit {
   justify-content: space-between;
   padding: 10px;
 }
-body #wrap #product_info_wrap .benefit > .sub_title {
-  font-size: 1.188rem;
-  font-weight: 600;
-}
-body #wrap #product_info_wrap .benefit .info_arrow_down_btn > svg {
+body #wrap #product_info_wrap #summary_benefit_info .benefit .info_arrow_down_btn > svg {
   fill: #000;
 }
-body #wrap #product_info_wrap .benefit::after {
+body #wrap #product_info_wrap #summary_benefit_info .benefit::after {
   content: "";
   position: absolute;
   left: 0;
@@ -477,19 +400,5 @@ body #wrap #product_info_wrap .benefit::after {
   height: 0.8px;
   background-color: #6D7175;
 }
-body #wrap #product_info_wrap .benefit .benefit_popup {
-  display: none;
-}
-body #wrap #product_info_wrap .benefit .benefit_popup h4 {
-  font-weight: 600;
-  margin: 15px 0;
-}
-body #wrap #product_info_wrap .benefit .benefit_popup p {
-  letter-spacing: -0.2;
-  line-height: 1.3;
-}
-body #wrap #product_info_wrap .benefit .benefit_popup p:nth-of-type(14) {
-  margin-top: 20px;
-}
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=styles.main.css.map */

@@ -6,7 +6,7 @@
     <title>DIVE IN Soothing Cream | Torriden </title>
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" defer></script>
 </head>
 <body>
     <main id="wrap">
@@ -48,6 +48,9 @@
                 </button>
                 <button type="button" class="small_img" id="small_img7_btn">
                     <img class="photo small7" src="./images/image_007.jpg" alt="">
+                </button>
+                <button type="button" class="small_img" id="small_img8_btn">
+                    <img class="photo small7" src="./images/image_008.jpg" alt="">
                 </button>
             </div>
         </section>
@@ -105,15 +108,15 @@
                 <div class="input_quantity_box">
                     <button type="button" id="minus_btn">
                         <!-- svg -->
-                        <svg width="16" height="16" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 8H0V6H6V0H8V6H14V8H8V14H6V8Z"/>
+                        <svg width="16" height="16" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 2V0H12V2H0Z"/>
                         </svg>
                     </button>
                     <input type="number" name="input_quantity" id="input_quantity" class="input" value="1">
                     <button type="button" id="plus_btn">
                         <!-- svg -->
-                        <svg width="16" height="16" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 2V0H12V2H0Z"/>
+                        <svg width="16" height="16" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 8H0V6H6V0H8V6H14V8H8V14H6V8Z"/>
                         </svg>
                     </button>
                 </div>
@@ -125,7 +128,7 @@
                             <label for="one_time_purchase">
                                 <input type="radio" id="one_time_purchase" name="subscription" class="select">
                                 <span>One-time purchase</span>
-                                <span class="price_info">$27.00 USD</span>
+                                <span class="price_info original_price">$27.00 USD</span>
                             </label>
                         </li>
                         <li class="two_li">
@@ -135,19 +138,19 @@
                         <li class="three_li">
                             <label for="every_month_purchase">
                                 <input type="radio" id="every_month_purchase" name="subscription" class="select">
-                                <span>Deliver every month, 10% off</span>
+                                <span id="discount_info">Deliver every month, 10% off</span>
                             </label>
                         </li>
                         <li class="four_li">
                             <label for="every_two_purchase">
                                 <input type="radio" id="every_two_purchase" name="subscription" class="select">
-                                <span>Deliver every 2 months, 7% off</span>
+                                <span id="discount_info">Deliver every 2 months, 7% off</span>
                             </label>
                         </li>
                         <li class="five_li">
                             <label for="every_three_purchase">
                                 <input type="radio" id="every_three_purchase" name="subscription" class="select">
-                                <span>Deliver every 3 months, 5% off</span>
+                                <span id="discount_info">Deliver every 3 months, 5% off</span>
                             </label>
                         </li>
                     </ul>
@@ -166,22 +169,76 @@
             </div>
             <div id="summary_benefit_info">
                 <div class="summary">
-                    <p>SUMMARY</p>
-                    <button type="button" class="info_arrow_down_btn">
+                    <div class="summary_main">
+                        <h3 class="sub_title">SUMMARY</h3>
+                        <button type="button" class="info_arrow_down_btn">
                         <!-- svg -->
                         <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.18188 5.48591L10.7819 0.88591L12.1819 2.28591L6.18188 8.28591L0.181885 2.28591L1.58188 0.88591L6.18188 5.48591Z"/>
                         </svg>
-                    </button>
+                        </button>
+                    </div>
+                    <div class="summary_popup">
+                        <p>A low-irritation soothing gel cream that helps cool and moisturize the face with 5D low-molecular hyaluronic acid.</p>
+                        <h4>Key Ingredient:</h4>
+                        <div class="ingredient_wrap">
+                            <p><img src="./images/popup_img_001.png" alt="">5D Hyaluronic Acid</p>
+                            <p><img src="./images/popup_img_002.png" alt="">Panthenol</p>
+                            <p><img src="./images/popup_img_003.png" alt="">Allantoin</p>
+                            <p><img src="./images/popup_img_004.png" alt="">Blue Complex</p>
+                        </div>
+                        <p><em>Skin Type:</em> Normal, Combination, Redness</p>
+                        <h4>Benefits:</h4>
+                        <div class="benefit_wrap">
+                            <div class="benefit_item">
+                                <img src="./images/popup_img_005.png" alt=""><span>Hydration Boost</span>
+                            </div>
+                            <div class="benefit_item">
+                                <img src="./images/popup_img_006.png" alt=""><span>Skin Calming</span>
+                            </div>
+                            <div class="benefit_item">
+                                <img src="./images/popup_img_007.png" alt=""><span>Cooling Effect</span>
+                            </div>
+                            <div class="benefit_item">
+                                <img src="./images/popup_img_006.png" alt=""><span>Soothes visible redness</span>
+                            </div>
+                            <div class="benefit_item">
+                                <img src="./images/popup_img_008.png" alt=""><span>Gentle Formula</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="benefit">
-                    <p>BENEFIT</p>
+                    <h3 class="sub_title">BENEFITS</h3>
                     <button type="button" class="info_arrow_down_btn">
                         <!-- svg -->
                         <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.18188 5.48591L10.7819 0.88591L12.1819 2.28591L6.18188 8.28591L0.181885 2.28591L1.58188 0.88591L6.18188 5.48591Z"/>
                         </svg>
                     </button>
+                    <div class="benefit_popup">
+                        <h4>Benefits:</h4>
+                        <p>✔ Hydration Boost: Replenishes surface and inner layers of skin with layered hydration and a fresh, dewy finish</p>
+                        <p>✔ Soothing: Calms and helps comfort irritated skin</p>
+                        <p>✔ Cooling: Instantly cools and soothes overheated skin</p>
+                        <p>✔ Soothes visible redness: Instantly soothes skin redness caused by heat and irritation</p>
+                        <p>✔ Gentle Formula: Suitable even for sensitive skin</p>
+                        <h4>Clinical Results:</h4>
+                        <p>* The human repeat insult patch test(Non-irritant)(1)</p>
+                        <p>* 15.55% improved deep skin hydration (internal hydration) (2)</p>
+                        <p>* 3.46°C reduces immediate skin temperature (cooling)(3)</p>
+                        <p>* 101.84% improved temporary redness caused by infrared (heat) irritation. (4) improving</p>
+                        <p>* 145.02% improved immediate moisturizing of the skin (5)</p>
+                        <p>* 30.85% improved skin water content (6)</p>
+                        <p>*109.77% improved soothing the skin from external irritation(physical).(7)</p>
+                        <p>* 100% agreed feels gentle/moisture/stickyness on the skin.(8)</p>
+                        <p>(1) Based on a 6-weeks clinical study on 50 people ages 20-60.</p>
+                        <p>(2)(3)(4) In clinical testing on 20 participants, average results Immediately after use.</p>
+                        <p>(5) In clinical testing on 20 participants, average results Immediately after use.</p>
+                        <p>(6) In clinical testing on 20 participants, average results after 4-weeks</p>
+                        <p>(7) In clinical testing on 20 participants, average results Immediately after use.</p>
+                        <p>(8) In the self-assessment survey portion of a clinical study(6) on 20 participants 4-weeks after use.</p>
+                    </div>
                 </div>
             </div>
         </section>
