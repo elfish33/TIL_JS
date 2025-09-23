@@ -52,3 +52,31 @@ function totalPriceFunc(){
     inputNum.value = num;
     priceOriginal.textContent = `$${formattedTotalPrice} USD` ;
 }
+
+//type buttons
+//что я хочу сделать?
+//при нажатии на одну из кнопок нужно сделать так, чтобы ее класс менялся
+//заготовить css чтобы при смене класса менялся и стиль
+const jarTypeBtn = document.querySelector('#jar_type');
+const tubeTypeBtn = document.querySelector('#tube_type');
+console.log(jarTypeBtn, tubeTypeBtn)
+let isActive = true;
+tubeTypeBtn.addEventListener('click', ()=>{
+    jarTypeBtn.classList.remove('active_type')
+    tubeTypeBtn.classList.add('active_type')
+    })
+jarTypeBtn.addEventListener('click', ()=>{
+    tubeTypeBtn.classList.remove('active_type')
+    jarTypeBtn.classList.add('active_type')
+    })
+
+const addWishBtn = document.querySelector('#add_wish_btn');
+const addWishSvg = document.querySelector('#add_wish_btn svg');
+let isFilled = false;
+
+
+addWishBtn.addEventListener('click', ()=>{
+    isFilled = !isFilled;
+    addWishSvg.style.fill = isFilled ? '#000' : '#fff';
+    addWishBtn.textContent = isFilled ? 'In Whishlist' : 'Add to Whishlist';
+})

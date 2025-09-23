@@ -175,8 +175,8 @@ body {
                         border: 0.8px solid $color_font_dark_gray;
                     }
                     .active_type {
-                        background-color: $color_black;
-                        color: $color-white;
+                        background-color: $color_black !important;;
+                        color: $color-white !important;; 
                     }
                 }
             }
@@ -329,13 +329,13 @@ body {
                         margin-top: 20px;
                         @include letter_line;
                     }
-                    .wish_wrap {
+                    .wish_wrap {        
                         width: 100%; padding: 15px 0;
                         @include flex-row;
                         justify-content: center; gap: 6px;
                         line-height: 30px;
-                        > svg {}
                         #add_wish_btn {
+                            > svg {fill: $color-white}
                             @include letter-line;
                         }
                     }

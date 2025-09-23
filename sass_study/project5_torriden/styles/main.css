@@ -195,6 +195,8 @@ body #wrap #product_info_wrap #option_types_info .type_buttons #jar_type {
   height: 46px;
   padding: 15px;
   border-radius: 40px;
+  background-color: #FFF;
+  color: #000;
 }
 body #wrap #product_info_wrap #option_types_info .type_buttons #tube_type {
   width: 144px;
@@ -202,11 +204,13 @@ body #wrap #product_info_wrap #option_types_info .type_buttons #tube_type {
   padding: 15px;
   border-radius: 40px;
   background-color: #FFF;
+  color: #000;
+  background-color: #FFF;
   border: 0.8px solid #434343;
 }
 body #wrap #product_info_wrap #option_types_info .type_buttons .active_type {
-  background-color: #000;
-  color: #FFF;
+  background-color: #000 !important;
+  color: #FFF !important;
 }
 body #wrap #product_info_wrap #quantity_select .subtitle {
   font-size: 0.92rem;
@@ -343,6 +347,9 @@ body #wrap #product_info_wrap #purchase_option_frm_btn #purchase_frm .wish_wrap 
   justify-content: center;
   gap: 6px;
   line-height: 30px;
+}
+body #wrap #product_info_wrap #purchase_option_frm_btn #purchase_frm .wish_wrap #add_wish_btn > svg {
+  fill: #FFF;
 }
 body #wrap #product_info_wrap #purchase_option_frm_btn #purchase_frm .wish_wrap #add_wish_btn {
   letter-spacing: -0.2;
