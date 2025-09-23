@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탄생화</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <script src="./scripts/index.js" defer></script>
+    <style>
+        body {
+            max-width: 1000px;
+            background-color: pink;
+            }
+        body #wrap {
+        
+        }
+        body #wrap .input_month {}
+        body #wrap .input_month #month {}
+        body #wrap .input_month > span {}
+        body #wrap  #result_btn {
+            display: block;
+            background-color: #fff;
+            padding: 15px 20px; color: #929292;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        body #wrap .result_text {}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="input_month">
+            <input type="number" name="month" id="month" placeholder="태어난 월을 입력해주세요">
+            <span>월</span>
+        </div>
+        <button type="button" id="result_btn">탄생화 결과 보기</button>
+        <p class="result_text"></p>
+    </div>
+</body>
+</html>
