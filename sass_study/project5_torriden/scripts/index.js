@@ -25,18 +25,13 @@ minusBtn.addEventListener('click', ()=>{
     totalPriceFunc()
 })
 
-function totalPriceFunc(){
-    let formattedTotalPrice = (originalPrice * num).toLocaleString('en-US', {minimumFractionDigits: 2});
-    inputNum.value = num;
-    priceOriginal.textContent = `$${formattedTotalPrice} USD` ;
-}
 
 //discount calc
 //коэф скидки, начальная цена (priceOriginal)
-const spanDiscount = document.querySelectorAll('#discount_info')
+const spanDiscount = document.querySelectorAll('.discount_info');
 
 //Deliver every month, 10% off
-spanDiscount[0].addEventListener('click', ()=> discountFunc(0.1)) //обязательно вызываем функцию расчета скидки через анонимную функцию, неиначе функция будет срабатывать не при клике, а при загрузке страницы
+spanDiscount[0].addEventListener('click', ()=> discountFunc(0.1))
 
 //Deliver every 2 months, 7% off
 spanDiscount[1].addEventListener('click', ()=> discountFunc(0.07))
@@ -44,16 +39,16 @@ spanDiscount[1].addEventListener('click', ()=> discountFunc(0.07))
 //Deliver every 3 months, 5% off
 spanDiscount[2].addEventListener('click', ()=> discountFunc(0.05))
 
-function discountFunc (discountPercent){
-    /* let basePrice = 27;
-    let discountAmount = basePrice * (discountPercent / 100)
-    let finalPrice = priceOriginal.textContent - discountAmount; // priceOriginal - это ДОМ-элемент, а не число, поэтому мы не можем вычитывать просто из него. нужно взять текстКонтент и превратить его в число
-    
-    return priceInfo.textContent = finalPrice.textContent.toLocaleString('en-US', {minimumFractionDigits: 2}); */
-    function discountFunc(discountPercent) {
-        let basePrice = Number(priceOriginal.textContent.replace(/[^0-9.]/g, ''));
-        let discountAmount = basePrice * discountPercent;
-        let finalPrice = basePrice - discountAmount;
-        priceInfo.textContent = `$${finalPrice.toLocaleString('en-US', {minimumFractionDigits: 2})} USD`;
-    }
+function discountFunc(discountPercent){
+    let priceInfoEm = document.querySelector('.two_li .price_info em');
+    priceInfoEm.textContent = 24.30;
+    let basePrice = 27;
+    let finalPrice = basePrice * ((100-discountPercent)/100)//final price
+    let finalFormatted = finalPrice.toFixed(2)
+    priceInfoEm.textContent = finalFormatted;
+}
+function totalPriceFunc(){
+    let formattedTotalPrice = (originalPrice * num).toLocaleString('en-US', {minimumFractionDigits: 2});
+    inputNum.value = num;
+    priceOriginal.textContent = `$${formattedTotalPrice} USD` ;
 }
