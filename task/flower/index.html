@@ -4,33 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>탄생화</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Single+Day&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/reset.css">
     <script src="./scripts/index.js" defer></script>
     <style>
         body {
             max-width: 1000px;
-            background-color: pink;
+            height: 900px;
+            background-image: url(./images/bg_003.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto; text-align: center;
             }
         body #wrap {
-        
+            margin-top: 10%;
+            width: 100%;
+            display: flex; flex-flow: column nowrap;
+            justify-content: center; align-items: center;
+            gap: 50px;
+
         }
         body #wrap .input_month {}
-        body #wrap .input_month #month {}
-        body #wrap .input_month > span {}
+        body #wrap .input_month h1 {
+            color: #fff; font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        body #wrap .input_month #month {
+            width: 60px; height: 40px;
+            border-radius: 8px; 
+            padding-left: 8px;
+        }
+        body #wrap .input_month #month:focus{
+            border: 1px solid #bebebe;
+        }
+        body #wrap .input_month > span {color: #fff; font-size: 1.25rem; line-height: 40px;}
         body #wrap  #result_btn {
             display: block;
             background-color: #fff;
-            padding: 15px 20px; color: #929292;
+            padding: 15px 15px; color: #6b3737;
             border-radius: 20px;
             font-weight: 500;
+            width: 200px; line-height: 25px;
         }
-        body #wrap .result_text {}
+        body #wrap  #result_btn:hover {
+            background-color: #f5f5f5;
+        }
+        body #wrap .result_text {color: #fff; font-size: 1.25rem;}
     </style>
 </head>
 <body>
     <div id="wrap">
         <div class="input_month">
-            <input type="number" name="month" id="month" placeholder="태어난 월을 입력해주세요">
+            <h1>태어난 월을 입력해주세요</h1>
+            <input type="number" name="month" id="month" >
             <span>월</span>
         </div>
         <button type="button" id="result_btn">탄생화 결과 보기</button>
