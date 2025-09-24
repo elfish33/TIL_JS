@@ -62,8 +62,39 @@ console.log(inputMonth, resultBtn, resultText)
 
 resultBtn.addEventListener('click',()=>{
     if(inputMonth.value == birthday_flower[0].month){
-        console.log('1월입니다')
+        resultText.textContent = `${birthday_flower[0].month}월의 탄생화가 ${birthday_flower[0].flower}입니다. 꽃말은 ${birthday_flower[0].content}입니다`
     }else if  (inputMonth.value == birthday_flower[1].month){
-        console.log('2월입니다')
+        resultText.textContent = `${birthday_flower[1].month}월의 탄생화가 ${birthday_flower[1].flower}입니다. 꽃말은 ${birthday_flower[1].content}입니다`
+    }else if  (inputMonth.value == birthday_flower[2].month){
+        resultText.textContent = `${birthday_flower[2].month}월의 탄생화가 ${birthday_flower[2].flower}입니다. 꽃말은 ${birthday_flower[2].content}입니다`
+    }else if  (inputMonth.value == birthday_flower[3].month){
+        resultText.textContent = `${birthday_flower[3].month}월의 탄생화가 ${birthday_flower[3].flower}입니다. 꽃말은 ${birthday_flower[3].content}입니다`
+    }else if  (inputMonth.value == birthday_flower[4].month){
+        resultText.textContent = `${birthday_flower[4].month}월의 탄생화가 ${birthday_flower[4].flower}입니다. 꽃말은 ${birthday_flower[4].content}입니다`
+    }else if  (inputMonth.value == birthday_flower[5].month){
+        resultText.textContent = `${birthday_flower[5].month}월의 탄생화가 ${birthday_flower[5].flower}입니다. 꽃말은 ${birthday_flower[5].content}입니다`
+    }else if  (inputMonth.value == birthday_flower[6].month){
+        resultText.textContent = `${birthday_flower[6].month}월의 탄생화가 ${birthday_flower[6].flower}입니다. 꽃말은 ${birthday_flower[6].content}입니다`
+    }else if  (inputMonth.value == birthday_flower[7].month){
+        resultText.textContent = `${birthday_flower[7].month}월의 탄생화가 ${birthday_flower[7].flower}입니다. 꽃말은 ${birthday_flower[7].content}입니다`
+    }else if  (inputMonth.value == birthday_flower[8].month){
+        resultText.textContent = `${birthday_flower[8].month}월의 탄생화가 ${birthday_flower[8].flower}입니다. 꽃말은 ${birthday_flower[8].content}입니다`
+    }else if  (inputMonth.value == birthday_flower[9].month){
+        resultText.textContent = `${birthday_flower[9].month}월의 탄생화가 ${birthday_flower[9].flower}입니다. 꽃말은 ${birthday_flower[9].content}입니다`
+    }else if  (inputMonth.value == birthday_flower[10].month){
+        resultText.textContent = `${birthday_flower[10].month}월의 탄생화가 ${birthday_flower[10].flower}입니다. 꽃말은 ${birthday_flower[10].content}입니다`
+    }else if  (inputMonth.value == birthday_flower[11].month){
+        resultText.textContent = `${birthday_flower[11].month}월의 탄생화가 ${birthday_flower[11].flower}입니다. 꽃말은 ${birthday_flower[11].content}입니다`
     }else console.log('The end')
 })
+
+console.log('============================')
+
+/* resultBtn.addEventListener('click', ()=>{
+    for(let i of birthday_flower){
+        //console.log(`${birthday_flower[i].month}월의 탄생화가 ${birthday_flower[i].name}입니다. 꽃말은 '${birthday_flower[i].content}'입니다`)
+        if (inputMonth.value == birthday_flower[i].month){
+            console.log(`${birthday_flower[i].month}월의 탄생화가 ${birthday_flower[i].name}입니다. 꽃말은 '${birthday_flower[i].content}'입니다`)
+        }
+        }
+}) */
