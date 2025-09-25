@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탄생화와 꽃말 찾기</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/index2.css">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./scripts/db.js"></script>
+    <!-- <script src="./scripts/index2.js" defer></script> -->
+    <script src="./scripts/index3.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>The Flower of my birthday</h1>
+        <h2>나의 탄생화 찾기</h2>
+        <div class="resultFlower">
+            <h2>당신의 탄생화는 <em></em>입니다.</h2>
+            <p>꽃말 : <span></span></p>
+        </div>
+        <form action="#" method="get" id="birthFrm">
+            <div class="input">
+                <input type="number" name="year" id="year">
+                <input type="number" name="month" id="month">
+                <input type="number" name="day" id="day">
+            </div>
+            <button type="button" id="result">나의 꽃과 꽃말 만나기</button>
+            <button type="button" id="share">내 탄생화와 꽃말 공유</button>
+        </form>
+        <div class="flower">
+            <img src="https://i.pinimg.com/1200x/5c/7f/48/5c7f4820c3cefe72627d17263af60402.jpg" alt="배경 이미지">
+        </div>
+    </main>
+</body>
+</html>
