@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper | JS Plugin</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- 개별 css script  -->
+    <style>
+        /* swiper 선택자는 공통 이름보다 직접 작성한 이름으로 생성하기 */
+        #product_new {
+            /* 부모 크기 설정(자식, 자손은 상대값으로 동일하게 커지는 게 기본 값)
+            즉, 크기는 무조건 부모한테 줘야함!*/
+            width: 500px; height: 250px; 
+            background-color: lightcoral;}
+        #product_new .swiper-wrapper {}/* relative 내장 */
+        #product_new .swiper-wrapper .swiper-slide { /* relative 내장 */
+            border: 3px solid black;
+        }
+        #product_new .swiper-wrapper .slide1 {}
+        #product_new .swiper-wrapper .slide2 {}
+        #product_new .swiper-wrapper .slide3 {}
+
+        #best_product {
+            width: 400px; height: 400px;
+            background-color: lightgreen;
+        }
+        #best_product .swiper-wrapper {}
+        #best_product .swiper-wrapper .swiper-slide {
+            border: 3px solid black;
+            background-color: aquamarine; /* если нет цвета фона когда используем эффект в JS баннеры будут наслаиваться друг на друга (особенно текст на них) */
+        }
+        #best_product .swiper-wrapper .slide1 {background-color: brown;}
+        #best_product .swiper-wrapper .slide2 {}
+        #best_product .swiper-wrapper .slide3 {background-color: crimson;}
+        #best_product .swiper-wrapper .slide4 {background-color: darkolivegreen;}
+
+    </style>
+</head>
+<body>
+    <!-- CDN 연결 필수 + HTML + CSS -->
+    <div class="swiper" id="product_new">
+		<!--필수-->
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1"><!-- relative 내장 -->
+                <video src="" autoplay muted loop></video>
+                <div class="txt"><!-- absolute 추가 -->
+                    <h1>Gentle Monster</h1>
+                    <a href="#">링크</a>
+                </div>
+            </div>
+            <div class="swiper-slide slide2">
+                <a href=""><!-- 슬라이드 전체가 선택될 때; swiper 절때 바꾸지 않고 그 안에서 태그 구성한다 -->
+                    <h1></h1>
+                    <h2></h2>
+                    <p></p>
+                </a>
+            </div>
+            <div class="swiper-slide slide3">
+                <a href="#"><img src="#" alt="광고"></a>
+                <!-- 선택되는 광고이미지만 슬라이드에 있을 경우 -->
+            </div>
+        </div>
+    </div>
+        <!-- BEST Slide * 4 -->
+    <div class="swiper" id="best_product">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1">Slide 1</div>
+            <div class="swiper-slide slide2">Slide 2</div>
+            <div class="swiper-slide slide3">Slide 3</div>
+            <div class="swiper-slide slide4">Slide 4</div>
+        </div>
+    </div>
+
+
+    <script>
+        const productNew = new Swiper('#product_new', {
+            //옵션:값, 옵션:값
+            autoplay:{delay: 3000}, //자동 재생
+            loop: true, //끝에서 처음으로 자연스럽게 전환
+            direction: 'vertical', //방향, 그본이 'horizontal'
+
+
+        })
+        const bestNew = new Swiper('#best_product', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {delay: 2000},
+            //effect: 'fade',
+            //effect: 'cube',
+            effect: 'cards',
+            //cubeEffect: {shadow: false,}
+        })
+    </script>
+</body>
+</html>
