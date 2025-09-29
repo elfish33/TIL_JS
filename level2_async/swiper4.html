@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper3</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        #tumblbug {
+            margin: 50px auto;
+            position: relative; width: 980px;
+        }
+        #tumblbug #tumblbug_swiper {
+            width: 766px; /* height: 280px; */
+            position: relative; border-radius: 12px;
+        }
+        #tumblbug #tumblbug_swiper .swiper-wrapper {}
+        #tumblbug #tumblbug_swiper .swiper-wrapper .swiper-slide {}
+        #tumblbug #tumblbug_swiper .swiper-wrapper .swiper-slide a img {
+            width: 100%; transform: translateY(-12%);
+        }
+        #tumblbug #tumblbug_swiper .swiper-wrapper .tumblbug1 {}
+        #tumblbug #tumblbug_swiper .swiper-wrapper .tumblbug2 {}
+        #tumblbug #tumblbug_swiper .swiper-wrapper .tumblbug3 {}
+
+        #tumblbug #tumblbug_swiper .controls {
+            position: absolute; display: flex; flex-flow: row nowrap;
+            align-items: center;
+            width: 150px; height: 50px;
+            bottom: 40px; right: 0; /* background-color: yellow; */
+            z-index: 100;/* из-за абсолюта невидно, поэтому задаем з-индекс */
+        }
+        #tumblbug #tumblbug_swiper .controls .swiper-pagination {
+            width: 50px; padding: 2px;
+            border-radius: 15px;
+            background-color: #999999; opacity: 0.7;
+            
+        }
+        #tumblbug #tumblbug_swiper .controls .swiper-pagination-current {
+            color: #fff;
+        }
+        #tumblbug #tumblbug_swiper .controls .button {
+            /* background-color: pink; */ height: 100%; width: 80px;
+            position: absolute; right: 0;
+        }
+        #tumblbug #tumblbug_swiper .controls .button .swiper-button-prev {
+            
+        }
+        #tumblbug #tumblbug_swiper .controls .button .swiper-button-next {}
+
+        #tumblbug #tumblbug_swiper .controls .button .swiper-button-prev,
+        #tumblbug #tumblbug_swiper .controls .button .swiper-button-next {
+            
+        }
+        #tumblbug #tumblbug_swiper .controls .button .swiper-button-prev svg,
+        #tumblbug #tumblbug_swiper .controls .button .swiper-button-next svg {
+            display: none;
+        }
+        #tumblbug #tumblbug_swiper .controls .button .swiper-button-prev::after,
+        #tumblbug #tumblbug_swiper .controls .button .swiper-button-next::after {
+            content: ''; position: absolute;
+            display: block;
+            bottom: 0; top: auto;
+            width: 40px; height: 40px;
+            background-image: url(https://cdn-icons-png.flaticon.com/128/15426/15426067.png);
+            background-repeat: no-repeat;
+            background-size: 40px auto;
+        }
+        #tumblbug #tumblbug_swiper .controls .button .swiper-button-prev::after {
+            right: 10px; 
+        }
+        #tumblbug #tumblbug_swiper .controls .button .swiper-button-next::after {
+            transform: rotate(180deg);
+            right: 0;
+        }
+    </style>
+    </head>
+    <body>
+    <section id="tumblbug">
+        <div class="swiper" id="tumblbug_swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide tumblbug1"><a href="#"><img src="./image/banner_003.jpg" alt=""></a></div>
+                <div class="swiper-slide tumblbug2"><a href="#"><img src="./image/banner_004.jpg" alt=""></a></div>
+                <div class="swiper-slide tumblbug3"><a href="#"><img src="./image/banner_005.jpg" alt=""></a></div>
+            </div>
+            <div class="controls">
+                <div class="swiper-pagination"></div>
+                <div class="button">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </body>
+    <script>
+        const tumblbugSwiper = new Swiper('#tumblbug_swiper',{
+            autoplay: {delay: 50000},
+            loop: true,
+            navigation: {
+                prevEl: '.button .swiper-button-prev',
+                nextEl: '.button .swiper-button-next',
+            },
+            pagination: {
+                el: '.controls .swiper-pagination',
+                type: "fraction",
+            },
+        })
+    </script>
