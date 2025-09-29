@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Мои задачи</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #e0f7fa;
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    button {
+      background: #ff5252;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ff1744;
+    }
+  </style>
+</head>
+<body>
+
+<h2>📋 Мои задачи</h2>
+<ul id="taskList"></ul>
+<hr>
+<h2>📋 Мои задачи</h2>
+<p>Осталось задач: <span id="counter">3</span></p>
+<ul id="taskList"></ul>
+<button id="addTaskBtn">➕ Добавить задачу</button>
+
+<script>
+    const tasks = [
+        {id: 1, text: 'Выучить JavaScript'} ,
+        {id: 2, text: 'Сделать домашку'},
+        {id: 3, text: 'Погулять с собакой'}
+        ];
+    for(let i of tasks){
+        if (i.id === '2'){
+            console.log('Это домашка!')
+        }else{console.log('Это что-то другое!')}
+        console.log('================================')
+        const taskList = document.querySelector('#taskList');
+        let newLi = document.createElement('li');
+        newLi.innerHTML = `<span>${i.text}</span> <button type="button">삭제</button>`;
+        taskList.appendChild(newLi);
+        let delBtn = newLi.querySelector('button');
+        delBtn.addEventListener('click', ()=>{
+            //newLi.remove();
+            newLi.style.display = 'none';
+            delBtn.style.display === 'block' ? delBtn.style.display = 'none' : delBtn.style.display = 'block';
+            const againBtn = document.createElement('button');
+            againBtn.textContent = '복원';
+            againBtn.style.backgroundColor = 'blue';
+            againBtn.style.color = 'white';
+            againBtn.style.top = '40px';
+            document.body.appendChild(againBtn);
+            againBtn.addEventListener('click', ()=>{
+                //taskList.appendChild(newLi);
+                //newLi.appendChild(delBtn);
+                newLi.style.display = 'flex';
+                delBtn.style.display = 'inline-block';
+                //delBtn.style.display = 'block' ? delBtn.style.display = 'none' : delBtn.style.display = 'block';
+                againBtn.style.display = 'block' ? againBtn.style.display = 'none' : againBtn.style.display = 'block';
+            })
+            
+        })
+    }
+</script>
+</body>
+</html>

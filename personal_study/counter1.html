@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Мои задачи</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #e0f7fa;
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    button {
+      background: #ff5252;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ff1744;
+    }
+  </style>
+</head>
+<body>
+
+<h2>📋 Мои задачи</h2>
+<p>Осталось задач: <span id="counter">3</span></p>
+<ul id="taskList"></ul>
+<button id="addTaskBtn">➕ Добавить задачу</button>
+<button id="delTaskBtn">- Удалить задачу</button>
+
+<script>
+    const tasks3 = [
+    { id: 1, text: 'Погладить кошку', done: false },
+    { id: 2, text: 'Погулять с собакой', done: true },
+    { id: 3, text: 'КОШКА на крыше', done: false },
+    { id: 4, text: 'Сделать домашку', done: true },
+    { id: 5, text: 'Найти Кошку в комнате', done: false }
+    ];
+
+    const newTaskArray = tasks3.filter(catFilter => catFilter.text.toLowerCase().includes('кошк'));
+    console.log(newTaskArray)
+    const addedCatArray = newTaskArray.map(addingCat => '🐱 ' + addingCat.text)
+    console.log(addedCatArray)
+
+
+
+    const tasks2 = [
+    { id: 1, text: 'Выучить JavaScript', done: false },
+    { id: 2, text: 'Сделать домашку', done: true },
+    { id: 3, text: 'Погулять с собакой', done: false },
+    { id: 4, text: 'Домашка по математике', done: false }
+    ];
+    const AssignmentArray = tasks2.filter(taskAssign => taskAssign.text.toLowerCase().includes('домашк'))
+
+
+    const tasks = [
+        {id: 1, text: 'Выучить JavaScript'} ,
+        {id: 2, text: 'Сделать домашку'},
+        {id: 3, text: 'Погулять с собакой'}
+        ];
+    //const newTaskArray = tasks.map(task => task.text.toUpperCase());
+    const newArray2 = tasks.map(test => '🔥 ' + test.text + '!');
+    const newArray3 = tasks.map(test2 => ({done: false}))
+    console.log(newArray2);    
+
+    const addTaskBtn = document.querySelector('#addTaskBtn');
+    const delTaskBtn = document.querySelector('#delTaskBtn');
+    const counter = document.querySelector('#counter'); //span = string
+    let counterNum = 3;
+    counter.textContent = counterNum;
+    addTaskBtn.addEventListener('click',()=>{
+            counterNum === 10 ? alert('Too much') : counterNum ++;
+            counter.textContent = counterNum;
+    })
+    delTaskBtn.addEventListener('click', ()=>{
+        counterNum === 1 ? alert('Больше нельзя!') : counterNum --;
+        counter.textContent = counterNum;
+    })
+
+
+</script>
+</body>
+</html>

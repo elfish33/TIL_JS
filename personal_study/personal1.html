@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>쇼핑몰 상품 카드</title>
+<style>
+    body {
+    font-family: sans-serif;
+    background: #f5f5f5;
+    padding: 30px;
+    }
+    .product {
+      width: 300px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .product .name {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    .product .price {
+      font-size: 18px;
+      color: darkgreen;
+      margin-bottom: 10px;
+    }
+    .product .btn {
+      padding: 10px 20px;
+      background: hotpink;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .product .sale {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/300x200" alt="상품 이미지">
+    <div class="name">에덴 02</div>
+    <div class="price">₩330,000</div>
+    <button class="btn">할인 보기</button>
+    <div class="sale">🔥 지금 ₩290,000에 구매 가능!</div>
+  </div>
+<script>
+    const sale = document.querySelector('.sale');
+    const saleBtn = document.querySelector('.btn');
+
+    saleBtn.addEventListener('click',()=>{
+        sale.style.display == 'block' ?  sale.style.display = 'none' : sale.style.display = 'block';
+    })
+</script>
+</body>
+</html>
