@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <style>
+        body {overflow-x: hidden;}
+        main .box {height: 100vh; background-color: #eee; font-size: 5rem;}
+        main .wrap .container {display: flex; width: 400vw;}
+        .container img {width: 100vw;}
+    </style>
+</head>
+<body>
+    <main>
+        <section class="box">1</section>
+        <section class="wrap">
+            <div class="container">
+                <h1>Discover Korea, Feel the Magic</h1>
+                <img src="https://images.unsplash.com/photo-1758967501532-29a4670f7ed1?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <img src="https://plus.unsplash.com/premium_photo-1682048358674-38c88dcfd50a?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <img src="https://images.unsplash.com/photo-1721341737366-844faa01c78b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <img src="https://images.unsplash.com/photo-1553722771-8a74330a47bf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+        </section>
+        <section class="box">3</section>
+        <section class="wrap">
+            <div class="container">
+                <img src="https://images.unsplash.com/photo-1759109220887-6768eda42293?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <img src="https://images.unsplash.com/photo-1728649054288-61f332ee389b?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <img src="https://images.unsplash.com/photo-1722349670228-83b415430362?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <img src="https://images.unsplash.com/photo-1721613889535-7a167f633d85?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+        <section class="box">5</section>
+    </main>
+
+
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        const container = document.querySelector('.container');
+        const scrollW = container.offsetWidth - window.innerWidth;
+        console.log(container, scrollW)
+
+        //scrollTrigger
+        gsap.utils.toArray('.wrap').forEach((obj) => {
+            console.log(obj)
+            // timeline & fromTo 연결 하기 위해 변수 필요하니까 만들거야
+            const banyan = gsap.timeline({
+                scrollTrigger: {
+                    trigger: obj,//wrap이 보여야 시작해라
+                    start: 'center center', //중앙-중앙에서 시작해라
+                    end:()=> "+=" + scrollW, //가로 스크롤 종료 지점
+                    scrub: true,//마우스휠 종작에 맞추기
+                    pin:true,//고정
+                    anticipatePin:1,//gsap 권장 옵션(화면튀는현상막기)
+                },defaults: {ease: 'none'}, //속도 균일하게~
+            })
+            banyan.fromTo(obj.querySelector('.container'), {
+                x:0,
+            },{
+                x:-scrollW,
+            })
+        })
+    </script>
+</body>
+</html>

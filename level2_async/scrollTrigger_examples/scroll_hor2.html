@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Korea | Horizontal Scroll</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Luxurious+Roman&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <style>
+        body {overflow-x: hidden;}
+        main .box {height: 100vh;}
+        main .box:nth-child(1) {
+            background-position: center; background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url(./images/travel_korea_bg.jpg);
+        }
+
+        main .box:nth-child(1) .text {
+            height: 100%;
+            display: flex; flex-flow: column nowrap;
+            justify-content: end; align-items: flex-start;
+            gap: 30px;
+            padding: 50px;
+        }
+        main .box:nth-child(1) .text h1 {
+            color: #fff; font-weight: 700;
+            font-size: 5rem;
+            font-family: "Montserrat", sans-serif;
+            animation: title_ani 3s ease;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        main .box:nth-child(1) h3 {
+            color: #fff; font-weight: 500;
+            font-size: 4rem; font-family: "Montserrat", sans-serif;
+            animation: title_ani 2s ease;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        main .wrap {}
+        main .wrap .container {
+            display: flex; width: max-content;
+        }
+        .panel {
+            flex: 0 0 100vw;
+            height: 100vh;
+            position: relative;
+            text-align: center;
+        }
+        main .wrap .container .panel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;}
+        .panel h2, .panel p {
+            position: absolute;
+            color: white;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: "Montserrat", sans-serif;
+            }
+
+        .panel h2 {
+            top: 30%;
+            font-weight: 500;
+            font-size: 4rem;
+            }
+
+        .panel p {
+            top: 45%;
+            font-size: 2rem;
+            }
+
+        @keyframes title_ani {
+            0% {opacity:0; transform: translateY(100px);}
+            100% {opacity:1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="box">
+            <div class="text">
+                <h1>TRAVEL KOREA</h1>
+                <h3>From Palaces to Street Food — Korea Awaits</h3>
+            </div>
+        </section>
+        <section class="wrap">
+            <div class="container">
+                <div class="panel panel_ani">
+                    <img src="./images/travel_korea_001.jpg" alt="">
+                    <h2 class="title_ani">Tradition Meets Modernity</h2>
+                    <p class="text_ani">Visit ancient palaces and futuristic towers.</p>
+                </div>
+                <div class="panel panel_ani">
+                    <img src="./images/travel_korea_002.jpg" alt="">
+                    <h2 class="title_ani">Welcome to Korea</h2>
+                    <p class="text_ani">Explore the vibrant streets of Seoul.</p>
+                </div>
+                <div class="panel">
+                    <img src="./images/travel_korea_003.jpg" alt="">
+                </div>
+                <div class="panel">
+                    <img src="./images/travel_korea_004.jpg" alt="">
+                </div>
+                <div class="panel">
+                    <img src="./images/travel_korea_005.jpg" alt="">
+                </div>
+                
+            </div>
+        </section>
+    </main>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        const container = document.querySelector('.container');
+        const scrollW = container.offsetWidth - window.innerWidth;
+        console.log(container, scrollW)
+
+        gsap.utils.toArray('.wrap').forEach((obj) => {
+            console.log(obj)
+            const travelKorea = gsap.timeline({
+                scrollTrigger: {
+                    trigger: obj,
+                    start: 'center center',
+                    end: ()=> "+=" + scrollW,
+                    scrub: true,
+                    pin: true,
+                    anticipatePin:1,
+                },defaults: {ease: 'none'},
+            })
+            travelKorea.fromTo(obj.querySelector('.container'),{
+                x:0,
+            },{
+                x: -scrollW,
+            })
+        });
+
+        const panel = document.querySelectorAll('.panel_ani');
+        const title = document.querySelectorAll('.title_ani');
+        const text = document.querySelectorAll('.text_ani');
+        console.log(panel, title,text)
+
+        panel.forEach((obj, ind)=>{
+            gsap.fromTo(title[ind],{
+                opacity:0,
+                y: 100,
+            },{
+                scrollTrigger: {
+                    trigger: obj,
+                    start: 'top center',
+                    toggleActions: 'play none none reverse',
+                    
+                },
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                scrub:true,
+            })
+
+            gsap.fromTo(text[ind],{
+                opacity:0,
+                y: 100,
+            },{
+                scrollTrigger: {
+                    trigger: obj,
+                    start: 'top center',
+                    toggleActions: 'play none none reverse',
+                },
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: 0.5,
+                scrub:true,
+            })
+            gsap.fromTo(obj,{
+                opacity:0.5,
+            },{
+                scrollTrigger: {
+                    trigger: obj,
+                    start: 'top center',
+                    toggleActions: 'play none none reverse',
+                    
+                },
+                opacity: 1,
+                duration: 2,
+            })
+        })
+    </script>
+</body>
+</html>
