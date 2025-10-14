@@ -1,0 +1,14 @@
+#wrap main {}
+#wrap main h1 {
+    height: 80vh; text-align: center;
+    line-height: 80vh; /* только если текст из одной строки, если больше строк, то используем паддинг а лайн хайт делаем как обычно 1.5*/
+    font-size: 2rem;
+    font-weight: 700;
+}
+#wrap main #web-project {
+    border: 2px solid #000;
+    width: 1000px; height: 450px;
+}
+#wrap main #web-project .swiper-wrapper .swiper-slide:nth-child(odd) {background: purple;}
+#wrap main #web-project .swiper-wrapper .swiper-slide:nth-child(even) {background: pink;}
+

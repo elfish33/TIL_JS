@@ -1,0 +1,14 @@
+#wrap {}
+
+#wrap header {
+    position: fixed; left: 0; top: 0;
+    background: #f5f5f5; display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px; width: 100%; min-width: 1200px; /* значит что только ПК версия не риспонсив */
+    padding: 0 40px; z-index: 999;
+}
+
+#wrap footer p {
+    line-height: 200px; text-align: center;
+}
